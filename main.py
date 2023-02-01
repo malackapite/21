@@ -1,3 +1,3 @@
 #megoldás
-def megoldas():pass
+def eredmeny():pass
 #teszesetek
