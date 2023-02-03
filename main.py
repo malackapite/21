@@ -30,7 +30,7 @@ def jatekosVesztettTeszt():
     gep = [1, 2, 3, 4]
     kapott = eredmeny(jatekos, gep)
     vart = "vesztettél"
-    print("jatekosVesztettTeszt:")
+    print("jatekosVesztettTeszt")
     if kapott == vart:
         print("sikeres")
     else:
@@ -42,7 +42,7 @@ def jatekosVesztettTobbLappalTeszt():
     gep = [1, 2, 3, 4]
     kapott = eredmeny(jatekos, gep)
     vart = "vesztettél"
-    print("jatekosVesztettTobbLappalTeszt:")
+    print("jatekosVesztettTobbLappalTeszt")
     if kapott == vart:
         print("sikeres")
     else:
@@ -59,6 +59,9 @@ def jatekosVesztettUgyannanyiLapTeszt():
     else:
         print("teszt megbukott")
     print()
+
+
+
 def gepVesztettTeszt():
     print("gepVesztettTeszt")
     jatekos = [1, 2, 3, 4]
@@ -93,6 +96,9 @@ def gepVesztettUgyannanyiLapTeszt():
     else:
         print("teszt megbukott")
     print()
+
+
+
 def dontetlenUgyanannyiLapTeszt():
     jatekos = [12, 11]
     gep = [12, 12]
@@ -127,6 +133,9 @@ def dontetlenGepTobbLapTeszt():
     else:
         print("teszt megbukott")
     print()
+
+
+    
 def jatekFolytatodikTeszt():
     jatekos = [1, 5]
     gep = [4, 2]
@@ -139,6 +148,17 @@ def jatekFolytatodikTeszt():
         print("teszt megbukott")
     print()
 
+def hibakezelesTeszt():
+    jatekos = 43
+    gep = [4, 2]
+    print("hibakezelesTeszt")
+    try:
+        kapott = eredmeny(jatekos, gep)
+        print("Az 'eredmeny' függvény lefutott")
+    except TypeError:
+        print("hiba - Az 'eredmeny' függvény nem megfelelő típust kapott")
+
+    print()
 def tesztek():
     jatekosVesztettTeszt()
     jatekosVesztettTobbLappalTeszt()
@@ -154,4 +174,5 @@ def tesztek():
 
     jatekFolytatodikTeszt()
 
+    hibakezelesTeszt()
 tesztek()
