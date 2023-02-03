@@ -35,7 +35,25 @@ def jatekosVesztettTeszt():
     else:
         print("teszt megbukott")
 
+def gepVesztettTeszt():
+    jatekos = [1, 2, 3, 4]
+    gep = [12, 11]
+    kapott = eredmeny(jatekos, gep)
+    vart = "nyertél"
+    if kapott == vart:
+        print("sikeres")
+    else:
+        print("teszt megbukott")
+def dontetlenTeszt():
+    jatekos = [12,11]
+    gep = [12, 12]
+    kapott = eredmeny(jatekos, gep)
+    vart = "döntetlen"
+    if kapott == vart:
+        print("sikeres")
+    else:
+        print("teszt megbukott")
 
 jatekosVesztettTeszt()
-
-print("sus"*69)
+gepVesztettTeszt()
+dontetlenTeszt()
