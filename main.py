@@ -37,3 +37,5 @@ def jatekosVesztettTeszt():
 
 
 jatekosVesztettTeszt()
+
+print("sus"*69)
