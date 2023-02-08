@@ -1,17 +1,26 @@
 # megoldás
-
-
 def eredmeny(jatekosLapok: list, gepLapok: list):
-    szoveg = ""
-    jatekos = pontszamitas(jatekosLapok)
-    gep = pontszamitas(gepLapok)
+    gPont = pontszamitas(gepLapok)
+    jPont = pontszamitas(jatekosLapok)
 
-    if jatekos > 21 and gep > 21:
-        szoveg = "döntetlen"
-    elif jatekos > 21:
-        szoveg = "vesztettél"
-    elif gep > 21:
-        szoveg = "nyertél"
+    gDb = len(gepLapok)
+    jDb = len(jatekosLapok)
+    if gPont > 21 and jPont > 21:
+            szoveg = "döntetlen, a ház nyert"
+    elif gPont > 21:
+            szoveg = "nyertél"
+    elif jPont > 21:
+            szoveg = "vesztettél"
+    elif jPont > gPont:
+            szoveg = "nyertél"
+    elif jPont < gPont:
+            szoveg = "vesztettél"
+    elif gDb > jDb:
+            szoveg = "nyertél"
+    elif gDb < jDb:
+            szoveg = "vesztettél"
+    else:
+            szoveg = "döntetlen, osztoztok a nyereségen"
     return szoveg
 
 
@@ -20,159 +29,197 @@ def pontszamitas(lista: list):
     for ix in lista:
         sum += ix
     return sum
-    # return sum(lista)
 
 
 # teszesetek
-
-def jatekosVesztettTeszt():
-    jatekos = [12, 11]
-    gep = [1, 2, 3, 4]
-    kapott = eredmeny(jatekos, gep)
-    vart = "vesztettél"
-    print("jatekosVesztettTeszt")
-    if kapott == vart:
-        print("sikeres")
-    else:
-        print("teszt megbukott")
-    print()
-
-def jatekosVesztettTobbLappalTeszt():
-    jatekos = [1, 2, 3, 4, 5, 12]
-    gep = [1, 2, 3, 4]
-    kapott = eredmeny(jatekos, gep)
-    vart = "vesztettél"
-    print("jatekosVesztettTobbLappalTeszt")
-    if kapott == vart:
-        print("sikeres")
-    else:
-        print("teszt megbukott")
-    print()
-def jatekosVesztettUgyannanyiLapTeszt():
-    jatekos = [9, 10, 12]
+def jatekosNagyobb21KevesebbLappalTeszt():
+    jatekos = [12, 10]
     gep = [1, 2, 3]
     kapott = eredmeny(jatekos, gep)
     vart = "vesztettél"
-    print("jatekosVesztettUgyannanyiLapTeszt")
+    print("jatekos Nagyobb 21 Kevesebb Lappal Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
+    else:
+        print("teszt megbukott")
+    print()
+def jatekosNagyobb21TobbLappalTeszt():
+    jatekos = [6, 6, 5, 5]
+    gep = [1, 2, 3]
+    kapott = eredmeny(jatekos, gep)
+    vart = "vesztettél"
+    print("jatekos Nagyobb 21 Tobb Lappal Teszt:")
+    if kapott == vart:
+        print("sikeres teszt")
+    else:
+        print("teszt megbukott")
+    print()
+def jatekosNagyobb21UgyanannyiLappalTeszt():
+    jatekos = [12, 5, 5]
+    gep = [1, 2, 3]
+    kapott = eredmeny(jatekos, gep)
+    vart = "vesztettél"
+    print("jatekos Nagyobb 21 Ugyanannyi Lappal Teszt:")
+    if kapott == vart:
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
 
 
 
-def gepVesztettTeszt():
-    print("gepVesztettTeszt")
-    jatekos = [1, 2, 3, 4]
-    gep = [12, 11]
+
+
+def gepNagyobb21KevesebbLappalTeszt():
+    jatekos = [2, 3, 5]
+    gep = [12, 10]
     kapott = eredmeny(jatekos, gep)
     vart = "nyertél"
+    print("gep Nagyobb 21 Kevesebb Lappal Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
 
-def gepVesztettTobbLappalTeszt():
-    jatekos = [1, 2, 3, 4]
-    gep = [1, 2, 3, 4, 5, 12]
+def gepNagyobb21TobbLappalTeszt():
+    jatekos = [2, 3, 5]
+    gep = [6, 6, 5, 5]
     kapott = eredmeny(jatekos, gep)
     vart = "nyertél"
-    print("gepVesztettTobbLappalTeszt")
+    print("gep Nagyobb 21 Tobb Lappal Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
-def gepVesztettUgyannanyiLapTeszt():
-    jatekos = [1, 2, 3]
-    gep = [9, 10, 12]
+
+def gepNagyobb21UgyanannyiLappalTeszt():
+    jatekos = [2, 3, 5]
+    gep = [12, 5, 5]
     kapott = eredmeny(jatekos, gep)
     vart = "nyertél"
-    print("gepVesztettUgyannanyiLapTeszt")
+    print("gep Nagyobb 21 Kevesebb Lappal Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
 
 
 
-def dontetlenUgyanannyiLapTeszt():
+
+
+
+
+def mindenkiVeszitUgyanannyiLapTeszt():
     jatekos = [12, 11]
     gep = [12, 12]
     kapott = eredmeny(jatekos, gep)
-    vart = "döntetlen"
-    print("dontetlenUgyanannyiLapTeszt")
+    vart = "döntetlen, a ház nyert"
+    print("mindenki Veszit Ugyanannyi Lap Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
-def dontetlenJatekosTobbLapTeszt():
-    jatekos = [6, 6, 11]
+def mindenkiVeszitGeptobbLapTeszt():
+    jatekos = [12, 11]
+    gep = [12, 6, 7]
+    kapott = eredmeny(jatekos, gep)
+    vart = "döntetlen, a ház nyert"
+    print("mindenki Veszit Gep tobb Lap Teszt:")
+    if kapott == vart:
+        print("sikeres teszt")
+    else:
+        print("teszt megbukott")
+    print()
+def mindenkiVeszitJatekostobbLapTeszt():
+    jatekos = [12, 4, 8]
     gep = [12, 12]
     kapott = eredmeny(jatekos, gep)
-    vart = "döntetlen"
-    print("dontetlenJatekosTobbLapTeszt")
+    vart = "döntetlen, a ház nyert"
+    print("mindenki Veszit Jatekos tobb Lap Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
 
-def dontetlenGepTobbLapTeszt():
-    jatekos = [12, 11]
-    gep = [6, 6, 12]
+
+
+
+
+
+
+def jatekosNyerKevesebbLappalTeszt():
+    jatekos = [12, 7]
+    gep = [12, 4, 3]
     kapott = eredmeny(jatekos, gep)
-    vart = "döntetlen"
-    print("dontetlenGepTobbLapTeszt")
+    vart = "nyertél"
+    print("jatekos Nyer Kevesebb Lappal Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
-
-
-    
-def jatekFolytatodikTeszt():
-    jatekos = [1, 5]
-    gep = [4, 2]
+def jatekosNyerTobbLappalTeszt():
+    jatekos = [12, 2, 5]
+    gep = [12, 6]
     kapott = eredmeny(jatekos, gep)
-    vart = ""
-    print("jatekFolytatodikTeszt")
+    vart = "nyertél"
+    print("jatekos Nyer Tobb Lappal Teszt:")
     if kapott == vart:
-        print("sikeres")
+        print("sikeres teszt")
     else:
         print("teszt megbukott")
     print()
 
-def hibakezelesTeszt():
-    jatekos = 43
-    gep = [4, 2]
-    print("hibakezelesTeszt")
-    try:
-        kapott = eredmeny(jatekos, gep)
-        print("Az 'eredmeny' függvény lefutott")
-    except TypeError:
-        print("hiba - Az 'eredmeny' függvény nem megfelelő típust kapott")
-
+def gepNyerKevesebbLappalTeszt():
+    jatekos = [12, 4, 3]
+    gep = [12, 7]
+    kapott = eredmeny(jatekos, gep)
+    vart = "vesztettél"
+    print("jatekos Nyer Kevesebb Lappal Teszt:")
+    if kapott == vart:
+        print("sikeres teszt")
+    else:
+        print("teszt megbukott")
     print()
+def gepNyerTobbLappalTeszt():
+    jatekos = [12, 6]
+    gep = [12, 2, 5]
+    kapott = eredmeny(jatekos, gep)
+    vart = "vesztettél"
+    print("jatekos Nyer Tobb Lappal Teszt:")
+    if kapott == vart:
+        print("sikeres teszt")
+    else:
+        print("teszt megbukott")
+    print()
+
+
+
+
+
+
 def tesztek():
-    jatekosVesztettTeszt()
-    jatekosVesztettTobbLappalTeszt()
-    jatekosVesztettUgyannanyiLapTeszt()
+    jatekosNagyobb21KevesebbLappalTeszt()
+    jatekosNagyobb21TobbLappalTeszt()
+    jatekosNagyobb21UgyanannyiLappalTeszt()
 
-    gepVesztettTeszt()
-    gepVesztettTobbLappalTeszt()
-    gepVesztettUgyannanyiLapTeszt()
+    gepNagyobb21KevesebbLappalTeszt()
+    gepNagyobb21TobbLappalTeszt()
+    gepNagyobb21UgyanannyiLappalTeszt()
 
-    dontetlenUgyanannyiLapTeszt()
-    dontetlenJatekosTobbLapTeszt()
-    dontetlenGepTobbLapTeszt()
+    mindenkiVeszitUgyanannyiLapTeszt()
+    mindenkiVeszitGeptobbLapTeszt()
+    mindenkiVeszitJatekostobbLapTeszt()
 
-    jatekFolytatodikTeszt()
+    jatekosNyerKevesebbLappalTeszt()
+    jatekosNyerTobbLappalTeszt()
 
-    hibakezelesTeszt()
+    gepNyerKevesebbLappalTeszt()
+    gepNyerTobbLappalTeszt()
+
 tesztek()
