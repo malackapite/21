@@ -34,6 +34,7 @@ def pontszamitas(lista: list):
     return sum
 
 
+
 # teszesetek
 def jatekosNagyobb21KevesebbLappalTeszt():
     jatekos = [12, 10]
@@ -46,6 +47,7 @@ def jatekosNagyobb21KevesebbLappalTeszt():
     else:
         print("teszt megbukott")
     print()
+    
 def jatekosNagyobb21TobbLappalTeszt():
     jatekos = [6, 6, 5, 5]
     gep = [1, 2, 3]
@@ -57,6 +59,7 @@ def jatekosNagyobb21TobbLappalTeszt():
     else:
         print("teszt megbukott")
     print()
+    
 def jatekosNagyobb21UgyanannyiLappalTeszt():
     jatekos = [12, 5, 5]
     gep = [1, 2, 3]
@@ -126,6 +129,7 @@ def mindenkiVeszitUgyanannyiLapTeszt():
     else:
         print("teszt megbukott")
     print()
+    
 def mindenkiVeszitGeptobbLapTeszt():
     jatekos = [12, 11]
     gep = [12, 6, 7]
@@ -137,6 +141,7 @@ def mindenkiVeszitGeptobbLapTeszt():
     else:
         print("teszt megbukott")
     print()
+    
 def mindenkiVeszitJatekostobbLapTeszt():
     jatekos = [12, 4, 8]
     gep = [12, 12]
@@ -166,6 +171,7 @@ def jatekosNyerKevesebbLappalTeszt():
     else:
         print("teszt megbukott")
     print()
+    
 def jatekosNyerTobbLappalTeszt():
     jatekos = [12, 2, 5]
     gep = [12, 6]
@@ -189,6 +195,7 @@ def gepNyerKevesebbLappalTeszt():
     else:
         print("teszt megbukott")
     print()
+    
 def gepNyerTobbLappalTeszt():
     jatekos = [12, 6]
     gep = [12, 2, 5]
@@ -255,6 +262,11 @@ def gepNyer():
 
     gepNyerKevesebbLappalTeszt()
     gepNyerTobbLappalTeszt()
+    
+    
+    
+    
+    
 def tesztek():
 
     dontetlen()
