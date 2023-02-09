@@ -228,26 +228,44 @@ def hibakezelesJatekosnalTeszt():
         print("teszt megbukott")
     print()
 
-def tesztek():
-    jatekosNagyobb21KevesebbLappalTeszt()
-    jatekosNagyobb21TobbLappalTeszt()
-    jatekosNagyobb21UgyanannyiLappalTeszt()
 
-    gepNagyobb21KevesebbLappalTeszt()
-    gepNagyobb21TobbLappalTeszt()
-    gepNagyobb21UgyanannyiLappalTeszt()
 
+
+
+
+
+
+def dontetlen():
     mindenkiVeszitUgyanannyiLapTeszt()
     mindenkiVeszitGeptobbLapTeszt()
     mindenkiVeszitJatekostobbLapTeszt()
 
+def jatekosNyer():
+    gepNagyobb21KevesebbLappalTeszt()
+    gepNagyobb21TobbLappalTeszt()
+    gepNagyobb21UgyanannyiLappalTeszt()
+
     jatekosNyerKevesebbLappalTeszt()
     jatekosNyerTobbLappalTeszt()
 
+def gepNyer():
+    jatekosNagyobb21KevesebbLappalTeszt()
+    jatekosNagyobb21TobbLappalTeszt()
+    jatekosNagyobb21UgyanannyiLappalTeszt()
+
     gepNyerKevesebbLappalTeszt()
     gepNyerTobbLappalTeszt()
+def tesztek():
+
+    dontetlen()
+    gepNyer()
+    jatekosNyer()
 
     hibakezelesGepnelTeszt()
     hibakezelesJatekosnalTeszt()
+
+
+
+
 
 tesztek()
